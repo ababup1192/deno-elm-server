@@ -91,11 +91,6 @@ toRoute urlString =
 
 handleRequest : Request -> Response
 handleRequest req =
-    let
-        intValuesDecoder : JD.Decoder (List Int)
-        intValuesDecoder =
-            JD.field "values" <| JD.list JD.int
-    in
     case ( req.method, toRoute req.url ) of
         ( GET, Echo str ) ->
             Response 200 str
@@ -109,6 +104,11 @@ handleRequest req =
                     Response 400 "Parameter must be a number."
 
         ( POST, Sum ) ->
+            let
+                intValuesDecoder : JD.Decoder (List Int)
+                intValuesDecoder =
+                    JD.field "values" <| JD.list JD.int
+            in
             case req.bodyMaybe of
                 Just body ->
                     case JD.decodeString intValuesDecoder body of
