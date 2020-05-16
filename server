@@ -1,0 +1,6 @@
+#!/bin/bash
+
+cd elm
+npm run build
+cd ../
+deno run --allow-net server.ts
