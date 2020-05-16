@@ -7,6 +7,11 @@
 # Launch
 
 ```
+// First time only
+$ cd elm
+$ npm i
+$ cd ../
+
 $ ./server
 ```
 
