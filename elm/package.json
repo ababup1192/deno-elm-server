@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "build": "parcel build --experimental-scope-hoisting --no-minify src/main.js"
+    "build": "parcel build --experimental-scope-hoisting src/main.js"
   },
   "author": "",
   "license": "ISC",
